@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAX SHOP | Top Up Game</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#101010;
+ color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ background:#191919;
+ padding:20px;
+ text-align:center;
+ border-bottom:2px solid #e50920;
+}
+.logo{font-size:30px;font-weight:bold;color:#ff263b}
+header p{color:#aaa;margin:7px 0 0}
+.container{max-width:500px;margin:auto;padding:20px}
+.hero{
+ background:linear-gradient(135deg,#39000b,#171717);
+ padding:25px;
+ border-radius:15px;
+ text-align:center;
+ margin-bottom:20px;
+}
+.hero h1{margin:0 0 10px}
+.hero p{color:#ddd}
+h2{font-size:19px}
+.card{
+ background:#1d1d1d;
+ border:1px solid #333;
+ border-radius:12px;
+ padding:16px;
+ margin:12px 0;
+}
+input,select{
+ width:100%;
+ padding:14px;
+ margin:8px 0;
+ border:1px solid #444;
+ border-radius:8px;
+ background:#292929;
+ color:white;
+ font-size:15px;
+}
+button{
+ width:100%;
+ padding:15px;
+ background:#e50920;
+ color:white;
+ border:0;
+ border-radius:9px;
+ font-weight:bold;
+ font-size:16px;
+ cursor:pointer;
+}
+button:hover{background:#bd0017}
+.small{color:#aaa;font-size:13px;line-height:1.5}
+footer{text-align:center;color:#777;padding:25px;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">RAX SHOP</div>
+ <p>TOP UP GAME • MUDAH • PANTAS</p>
+</header>
+
+<div class="container">
+
+ <section class="hero">
+  <h1>TOP UP MOBILE LEGENDS</h1>
+  <p>Pilih pakej diamond kegemaran anda!</p>
+  <strong>SELAMAT DATANG KE RAX SHOP</strong>
+ </section>
+
+ <div class="card">
+  <h2>1. Pilih Pakej Diamond</h2>
+  <select id="package">
+   <option value="">-- Pilih Diamond --</option>
+   <option value="86 Diamonds">86 Diamonds</option>
+   <option value="172 Diamonds">172 Diamonds</option>
+   <option value="257 Diamonds">257 Diamonds</option>
+   <option value="344 Diamonds">344 Diamonds</option>
+   <option value="429 Diamonds">429 Diamonds</option>
+   <option value="706 Diamonds">706 Diamonds</option>
+   <option value="Weekly Pass">Weekly Pass</option>
+  </select>
+  <p class="small">Harga akan dipaparkan selepas pakej dan harga rasmi ditetapkan.</p>
+ </div>
+
+ <div class="card">
+  <h2>2. Maklumat Akaun</h2>
+  <input id="userid" type="text" placeholder="Masukkan User ID">
+  <input id="zoneid" type="text" placeholder="Masukkan Zone ID">
+  <p class="small">Pastikan User ID dan Zone ID betul sebelum membuat pesanan.</p>
+ </div>
+
+ <div class="card">
+  <h2>3. Semak Pesanan</h2>
+  <button onclick="order()">SEMAK PESANAN</button>
+  <div id="result"></div>
+ </div>
+
+ <div class="card">
+  <h2>Maklumat Penting</h2>
+  <p class="small">
+   Website ini masih dalam peringkat pembangunan.
+   Pembayaran sebenar dan penghantaran diamond automatik belum diaktifkan.
+   Jangan hantar wang sehingga sistem rasmi tersedia.
+  </p>
+ </div>
+
+</div>
+
+<footer>
+ © 2026 RAX SHOP. All Rights Reserved.
+</footer>
+
+<script>
+function order(){
+ const pack=document.getElementById("package").value;
+ const uid=document.getElementById("userid").value.trim();
+ const zone=document.getElementById("zoneid").value.trim();
+ const result=document.getElementById("result");
+
+ if(!pack || !uid || !zone){
+  result.innerHTML="<p style='color:#ff596b'>Sila lengkapkan semua maklumat.</p>";
+  return;
+ }
+
+ result.innerHTML=
+ "<p><b>Ringkasan Pesanan</b></p>"+
+ "<p>Pakej: "+pack+"</p>"+
+ "<p>User ID: "+uid+"</p>"+
+ "<p>Zone ID: "+zone+"</p>"+
+ "<p style='color:#ffb84d'>Demo sahaja. Pembayaran belum tersedia.</p>";
+}
+</script>
+
+</body>
+</html>
